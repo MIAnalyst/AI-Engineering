@@ -1,6 +1,6 @@
 # Reranking
 
-Part of **Hybrid Search Strategies**. This note covers the second strategy: **re-ranking**. The first strategy, combining dense and sparse retrieval with a hybrid score, is in [Dense and Sparse Retrieval](Hybrid%20Search%20Strategies/Dense%20and%20Sparse%20Retrieval.md).
+Part of **Hybrid Search Strategies**. This note covers the second strategy: **re-ranking**. The first strategy, combining dense and sparse retrieval with a hybrid score, is in [Hybrid Search](Hybrid%20Search.md).
 
 ## What reranking is
 
@@ -170,7 +170,7 @@ No. It **scores again from scratch** and adds a **separate, new score**. The RRF
 
 The semantic ranker doesn't use the RRF score as an input either. RRF's only job is to **pick which 50 chunks get in**. After that, the ranker judges each chunk afresh from the query and the text in the fields named in your semantic configuration (title and content). That's why a chunk with a low RRF score can end up first: the two scores are independent.
 
-1. **Hybrid retrieval.** BM25 and vector search run in parallel. Their result lists are merged with **Reciprocal Rank Fusion (RRF)**, which gives each result a `@search.score`. This is Azure's version of the hybrid score. RRF works from each result's **rank** in the two lists rather than the weighted α formula in [Dense and Sparse Retrieval](Hybrid%20Search%20Strategies/Dense%20and%20Sparse%20Retrieval.md).
+1. **Hybrid retrieval.** BM25 and vector search run in parallel. Their result lists are merged with **Reciprocal Rank Fusion (RRF)**, which gives each result a `@search.score`. This is Azure's version of the hybrid score. RRF works from each result's **rank** in the two lists rather than the weighted α formula in [Hybrid Search](Hybrid%20Search.md).
 2. **Semantic ranker.** Azure takes the **top 50** fused results (or fewer, if fewer matched) and re-scores each one against the query. It uses a deep model from Microsoft that reads the query and the chunk together, like a cross-encoder. Each result gets a `@search.rerankerScore` from **0 to 4** (4 = highly relevant), and the results are re-sorted by it.
 3. **Your code.** Take the top 5–10 by reranker score, optionally drop anything below a threshold (e.g. `< 2.0`), and send the rest to the LLM **in that order**.
 

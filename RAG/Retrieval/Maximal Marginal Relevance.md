@@ -213,7 +213,7 @@ Query → Azure AI Search (hybrid + optional semantic ranker) → top N candidat
 - **Don't plug Azure's scores into the formula.** RRF scores and semantic ranker scores (0–4) are not cosine similarities. Compute `sim(d, q)` from the vectors, or normalize the scores first.
 - **Cheaper alternative:** if the duplicates are mostly neighbouring chunks of the same document, capping results per `parent_id` may be enough.
 
-See [Hybrid Search In Azure AI Search](Hybrid%20Search%20In%20Azure%20AI%20Search.md).
+See [Hybrid Search](Hybrid%20Search.md#6-hybrid-search-in-azure-ai-search-my-chatbot).
 
 ## Quick recap
 
@@ -223,4 +223,4 @@ See [Hybrid Search In Azure AI Search](Hybrid%20Search%20In%20Azure%20AI%20Searc
 - It trades a little relevance for a lot less repetition, so the LLM gets broader context.
 - In LangChain: `vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 4, "fetch_k": 20, "lambda_mult": 0.5})`. `fetch_k` is how many candidates are fetched by similarity first; `k` is how many MMR keeps.
 
-Related: [Dense and Sparse Retrieval](Dense%20and%20Sparse%20Retrieval.md) · [Reranking](Reranking.md) · [Hybrid Search In Azure AI Search](Hybrid%20Search%20In%20Azure%20AI%20Search.md)
+Related: [Hybrid Search](Hybrid%20Search.md) · [Reranking](Reranking.md)
