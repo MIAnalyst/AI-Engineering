@@ -1,6 +1,10 @@
 # Middleware in LangChain (Complete Notes)
 
+> **LangChain series · Lecture 7 of 7** — Previous: [LLM Structured Output With Langchain](LLM%20Structured%20Output%20With%20Langchain.md)
+
 > **One-line summary:** Middleware lets you plug extra logic *into* an agent's loop (before/after the model, around tool calls, and so on) to add control, safety, cost savings and reliability, without rewriting the agent. You attach it with `create_agent(..., middleware=[...])`.
+
+**Builds on:** [Create Agents Using Langchain](Create%20Agents%20Using%20Langchain.md) (`create_agent`), [Tools In Langchain](Tools%20In%20Langchain.md) (the tools the examples guard) and [Messages Types In Langchain](Messages%20Types%20In%20Langchain.md) (the message history that gets summarized).
 
 **Sources:** Lecture 1 (Summarization Middleware), Lecture 2 (Human-in-the-Loop Middleware), plus extra built-in middleware the lectures only mentioned or skipped (marked ➕).
 

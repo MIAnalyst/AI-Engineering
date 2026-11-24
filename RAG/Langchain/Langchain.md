@@ -1,5 +1,7 @@
 # Langchain
 
+> **LangChain series · Lecture 1 of 7** — Next: [Create Agents Using Langchain](Create%20Agents%20Using%20Langchain.md)
+
 ## Introduction to LangChain
 
 ## Introduction to LangChain

@@ -1,5 +1,7 @@
 # Create Agents Using LangChain (v1)
 
+> **LangChain series · Lecture 2 of 7** — Previous: [Langchain](Langchain.md) · Next: [Invoke And Batch Streaming](Invoke%20And%20Batch%20Streaming.md)
+
 > **One-line summary:** An *agent* is an LLM that can **decide on its own** when to call external tools, get context back from them, and then produce the final answer. In LangChain v1, you build one with a single function: `create_agent`.
 
 ---
@@ -265,5 +267,7 @@ print(response["messages"][-1].content)
 ## 9. What's Next
 
 - **Model integration:** using different LLM providers with LangChain.
-- **Message types:** Human, AI, System and Tool messages in detail.
-- Building agents with **multiple tools**.
+- **Calling a model:** `invoke`, `stream` and `batch`, in [Invoke And Batch Streaming](Invoke%20And%20Batch%20Streaming.md).
+- Building agents with **tools**: [Tools In Langchain](Tools%20In%20Langchain.md).
+- **Message types:** Human, AI, System and Tool messages in detail, in [Messages Types In Langchain](Messages%20Types%20In%20Langchain.md).
+- Controlling an agent's loop: [MiddleWare With Langchain](MiddleWare%20With%20Langchain.md).

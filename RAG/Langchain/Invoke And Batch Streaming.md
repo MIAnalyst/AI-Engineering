@@ -1,5 +1,7 @@
 # Invoke, Streaming & Batch in LangChain
 
+> **LangChain series · Lecture 3 of 7** — Previous: [Create Agents Using Langchain](Create%20Agents%20Using%20Langchain.md) · Next: [Tools In Langchain](Tools%20In%20Langchain.md)
+
 > **One-line summary:** There are three ways to call a model. `invoke` waits for the full answer, `stream` shows the answer piece by piece as it is generated, and `batch` sends many independent requests in parallel.
 
 ---
@@ -180,4 +182,4 @@ responses = model.batch(
 
 ## 8. What's Next
 
-- **Tools creation:** building custom tools for models and agents.
+- **Tools creation:** building custom tools for models and agents, in [Tools In Langchain](Tools%20In%20Langchain.md).

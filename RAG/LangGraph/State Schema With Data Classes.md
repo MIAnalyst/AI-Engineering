@@ -1,6 +1,6 @@
 # State Schema in LangGraph — `TypedDict` vs `dataclass`
 
-> **LangGraph series · Lecture 2 of 7** — Previous: [Building LangGraph](bulding%20langgrapg.md) · Next: [Pydantic Data Validation](Pydantic%20Data%20Validation.md)
+> **LangGraph series · Lecture 2 of 7** — Previous: [Building LangGraph](Bulding%20langgraph.md) · Next: [Pydantic Data Validation](Pydantic%20Data%20Validation.md)
 
 **Goal of the lesson:** learn two ways to define the state schema, and see what neither of them enforces at runtime. This sets up the next lesson, [Pydantic Data Validation](Pydantic%20Data%20Validation.md).
 
@@ -9,7 +9,7 @@
 ## 1. Recap: what the state schema is
 
 - The **state** is the input to the whole graph and to every node. Nodes read it and return updates to it.
-- Earlier ([Building LangGraph](bulding%20langgrapg.md)) we defined it with `TypedDict` plus a reducer:
+- Earlier ([Building LangGraph](Bulding%20langgraph.md)) we defined it with `TypedDict` plus a reducer:
 
 ```python
 class State(TypedDict):

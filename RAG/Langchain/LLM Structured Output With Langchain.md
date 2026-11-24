@@ -1,5 +1,7 @@
 # LLM Structured Output with LangChain
 
+> **LangChain series · Lecture 6 of 7** — Previous: [Messages Types In Langchain](Messages%20Types%20In%20Langchain.md) · Next: [MiddleWare With Langchain](MiddleWare%20With%20Langchain.md)
+
 > **One-line summary:** Structured output makes an LLM return its answer in a fixed schema (title, year, director…) instead of free text, so the result can be parsed and reused by other code. LangChain supports three ways to define the schema: **Pydantic**, **TypedDict**, and **dataclass**.
 
 ---
@@ -33,7 +35,7 @@ create_agent(model=..., response_format=Schema)   # on an agent
 - By default an LLM answers in **free-form text**, which is hard to use programmatically.
 - If you ask for an essay, or for movie details, you often want the response to **follow a known structure**.
 - If the response matches a schema, it is **easy to parse** and can feed the **next step in a pipeline** (database, API, UI, another chain).
-- Earlier lectures covered **messages** (system, human, AI, tool). This section builds on them.
+- Earlier lectures covered **messages** (system, human, AI, tool) in [Messages Types In Langchain](Messages%20Types%20In%20Langchain.md). This section builds on them.
 
 ---
 
@@ -464,3 +466,4 @@ class ContactInfo:
 ## 7. Up next
 
 - **Short-term memory** and related agent topics.
+- Controlling an agent's loop with [MiddleWare With Langchain](MiddleWare%20With%20Langchain.md).

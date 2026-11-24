@@ -109,7 +109,7 @@ This is exactly how a real chatbot works: the AI speaks, the human replies, the 
 
 ### Messages as graph state
 
-In a LangGraph application this list lives in the **graph state**, in a `messages` key. Every node appends to it using the `add_messages` reducer, which appends instead of overwriting. See the next section for what a reducer is. (`add_messages` was first used in [Building LangGraph](bulding%20langgrapg.md).)
+In a LangGraph application this list lives in the **graph state**, in a `messages` key. Every node appends to it using the `add_messages` reducer, which appends instead of overwriting. See the next section for what a reducer is. (`add_messages` was first used in [Building LangGraph](Bulding%20langgraph.md).)
 
 ```python
 from langgraph.graph import MessagesState     # ready-made state: messages + add_messages reducer
@@ -246,7 +246,7 @@ graph = builder.compile()
 graph.invoke({"messages": [HumanMessage(content="I want to learn Python")]})
 ```
 
-This is the same pattern as the SuperBot chatbot in [Building LangGraph](bulding%20langgrapg.md). [Tools And Tools Node Integration](Tools%20And%20Tools%20Node%20Integration.md) extends this graph with tool binding and tool execution.
+This is the same pattern as the SuperBot chatbot in [Building LangGraph](Bulding%20langgraph.md). [Tools And Tools Node Integration](Tools%20And%20Tools%20Node%20Integration.md) extends this graph with tool binding and tool execution.
 
 ---
 

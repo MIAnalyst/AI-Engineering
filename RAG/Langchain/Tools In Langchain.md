@@ -1,5 +1,7 @@
 # Tools in LangChain
 
+> **LangChain series · Lecture 4 of 7** — Previous: [Invoke And Batch Streaming](Invoke%20And%20Batch%20Streaming.md) · Next: [Messages Types In Langchain](Messages%20Types%20In%20Langchain.md)
+
 > **One-line summary:** A tool is a Python function that the LLM can ask to run. In LangChain you turn a function into a tool with the `@tool` decorator. You attach it to a model with `bind_tools`, or pass it to `create_agent`. The model decides when to call it, and your code (or the agent) runs it and sends the result back.
 
 ---
@@ -8,9 +10,9 @@
 
 | Already covered | Now |
 |---|---|
-| Agents (`create_agent`) | **Tools: how to create and use them** |
+| Agents (`create_agent`): [Create Agents Using Langchain](Create%20Agents%20Using%20Langchain.md) | **Tools: how to create and use them** |
 | Model integration with `init_chat_model`, plus `ChatGroq`, `ChatOpenAI` and `ChatGoogleGenerativeAI` | |
-| `invoke`, `stream`, `batch` | |
+| `invoke`, `stream`, `batch`: [Invoke And Batch Streaming](Invoke%20And%20Batch%20Streaming.md) | |
 
 Recall the basic agent: **LLM ↔ Tool**. The tool is just some functionality. It can be:
 - an API request
@@ -105,7 +107,7 @@ agent = create_agent(
 )
 ```
 
-The agent handles binding and calling for you automatically (covered in the earlier agents lecture).
+The agent handles binding and calling for you automatically (covered in [Create Agents Using Langchain](Create%20Agents%20Using%20Langchain.md)).
 
 | | `bind_tools` | `create_agent` |
 |---|---|---|
@@ -207,4 +209,4 @@ agent = create_agent(model="...", tools=[get_weather], system_prompt="...")
 
 ## 8. What's Next
 
-**Messages:** the different message types, including **System**, **Human** and **AI** messages (and the Tool message seen above).
+**Messages** ([Messages Types In Langchain](Messages%20Types%20In%20Langchain.md)): the different message types, including **System**, **Human** and **AI** messages (and the Tool message seen above).

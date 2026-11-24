@@ -1,5 +1,7 @@
 # Message Types in LangChain
 
+> **LangChain series · Lecture 5 of 7** — Previous: [Tools In Langchain](Tools%20In%20Langchain.md) · Next: [LLM Structured Output With Langchain](LLM%20Structured%20Output%20With%20Langchain.md)
+
 > **One-line summary:** Messages are the basic unit of context in LangChain. Every input to a model and every output from it is a message. A message carries a **role**, **content** and optional **metadata**. The four main types are **System**, **Human**, **AI** and **Tool**.
 
 ---
@@ -266,4 +268,4 @@ response.usage_metadata     # input / output / total tokens
 
 ## 10. What's Next
 
-**Structured output:** getting model responses in a fixed format using **Pydantic**, **nested structures** and **TypedDict**.
+**Structured output** ([LLM Structured Output With Langchain](LLM%20Structured%20Output%20With%20Langchain.md)): getting model responses in a fixed format using **Pydantic**, **nested structures** and **TypedDict**.
