@@ -218,6 +218,23 @@ display(Image(graph.get_graph().draw_mermaid_png()))
 - `ToolNode(tools)` takes the **same list** that was bound to the LLM, so it can execute any of them.
 - `tools_condition` routes to `"tools"` if the last AI message contains a tool call, and to `END` otherwise. The node must be named `"tools"`.
 
+**What happens at runtime**
+
+```
+START → tool_calling_llm → (tool call?) → tools → END
+```
+
+1. The LLM decides to call a tool and emits `tool_calls`.
+2. `tools_condition` routes to `tools`.
+3. `ToolNode` runs the tool and appends a `ToolMessage` with the raw result to `state["messages"]`.
+4. The edge `tools → END` ends the graph.
+
+**What the user gets**
+
+The graph returns the whole `messages` list. The last item is the `ToolMessage`, which holds the raw tool output. Examples are the arXiv abstract, the Wikipedia text or the Tavily JSON.
+
+No LLM writes a final answer from that result. If your app prints `result["messages"][-1]`, the user sees raw tool output. It does not see a written reply such as "The paper says…".
+
 ---
 
 ## 5. Testing the chatbot
